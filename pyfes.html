@@ -1,0 +1,625 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Introduction &#8212; FES 0.0.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=5db94ae7"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'pyfes';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="API" href="api.html" />
+    <link rel="prev" title="Setup with the existing python" href="setup.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">FES 0.0.0 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="setup.html">Setup with the existing python</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="core.html">Core API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="core/constituent.html">pyfes.core.Constituent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core/tide_type.html">pyfes.core.TideType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core/quality.html">pyfes.core.Quality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core/astronomic_angle.html">pyfes.core.AstronomicAngle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core/wave.html">pyfes.core.Wave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core/wave_table.html">pyfes.core.WaveTable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core/abstract.html">pyfes.core.AbstractTidalModelComplex64</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="core/cartesian.html">pyfes.core.Axis</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="core/lgp1.html">pyfes.core.tidal_model.LGP1Complex64</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="core/lgp2.html">pyfes.core.tidal_model.LGP2Complex64</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="core/tide.html">pyfes.core.evaluate_tide</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/pyfes.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introduction</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-file">Configuration file</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cartesian-grid">Cartesian grid</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lgp-discretization">LGP discretization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#harmonic-analysis">Harmonic analysis</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h1>
+<p>This module provides a Python interface to the tidal prediction software.
+The FES tides database is available from the <a class="reference external" href="http://www.aviso.altimetry.fr/en/data/products/auxiliary-products/global-tide-fes.html">AVISO website</a>.</p>
+<p>To predict tides, you need to instantiate a
+<a class="reference internal" href="core/abstract.html#pyfes.core.AbstractTidalModelComplex128" title="pyfes.core.AbstractTidalModelComplex128"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyfes.core.AbstractTidalModelComplex128</span></code></a> or
+<a class="reference internal" href="core/abstract.html#pyfes.core.AbstractTidalModelComplex64" title="pyfes.core.AbstractTidalModelComplex64"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyfes.core.AbstractTidalModelComplex64</span></code></a> object. The former uses double
+precision floating point numbers, while the latter uses single precision
+floating point numbers. The single precision version is faster and uses less
+memory, but is less accurate. Whatever the precision, the internal computations
+are done using double precision floating point numbers.</p>
+<section id="configuration-file">
+<span id="confguration-file"></span><h2>Configuration file<a class="headerlink" href="#configuration-file" title="Link to this heading">#</a></h2>
+<p>To instantiate a tidal model, you need to provide the YAML file describing the
+model to use. The YAML file is a text file containing two sections: <code class="docutils literal notranslate"><span class="pre">tide</span></code> and
+<code class="docutils literal notranslate"><span class="pre">radial</span></code>. The <code class="docutils literal notranslate"><span class="pre">tide</span></code> section contains the configuration of the tidal model
+used to calculate the tide elevations. The <code class="docutils literal notranslate"><span class="pre">radial</span></code> section contains the
+configuration of the model used to calculate the tide loading effect.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">tide</span></code> or <code class="docutils literal notranslate"><span class="pre">radial</span></code> section contains one of the following keys:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cartesian</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lgp</span></code></p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">cartesian</span></code> key indicates that the numeric model used a Cartesian
+grid to describe the ocean. The <code class="docutils literal notranslate"><span class="pre">lgp</span></code> key indicates that the numeric model
+used a LGP discretization to describe the ocean.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The configuration could contain environment variables. The environment
+variables are replaced by their values before the configuration is parsed.
+The syntax for environment variables is <code class="docutils literal notranslate"><span class="pre">${NAME}</span></code>, where <code class="docutils literal notranslate"><span class="pre">NAME</span></code> is the
+name of the environment variable.</p>
+</div>
+<section id="cartesian-grid">
+<h3>Cartesian grid<a class="headerlink" href="#cartesian-grid" title="Link to this heading">#</a></h3>
+<p>The section <code class="docutils literal notranslate"><span class="pre">cartesian</span></code> contains the following keys:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">lat</span></code>: the name of the netCDF variable containing the latitude of the grid
+points. Optional, default: <code class="docutils literal notranslate"><span class="pre">lat</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lon</span></code>: the name of the netCDF variable containing the longitude of the grid
+points. Optional, default: <code class="docutils literal notranslate"><span class="pre">lon</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">amplitude</span></code>: the name of the netCDF variable containing the amplitude of the
+tidal constituents. Optional, default: <code class="docutils literal notranslate"><span class="pre">amplitude</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">phase</span></code>: the name of the netCDF variable containing the phase of the tidal
+constituents. Optional, default: <code class="docutils literal notranslate"><span class="pre">phase</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">epsilon</span></code>: the tolerance used to determine if the longitude axis is periodic
+or not. If the step size times the number of elements in the longitude axis
+is equal to 360 degrees within the given tolerance, then the longitude axis
+is considered periodic. Otherwise, it is considered non-periodic. Optional,
+default: <code class="docutils literal notranslate"><span class="pre">1e-6</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">paths</span></code>: a dictionary containing the paths to the netCDF files containing
+the tidal constituents. The keys are the names of the tidal constituents,
+and the values are the paths to the netCDF files containing the tidal
+constituents.</p></li>
+</ul>
+</section>
+<section id="lgp-discretization">
+<h3>LGP discretization<a class="headerlink" href="#lgp-discretization" title="Link to this heading">#</a></h3>
+<p>The section <code class="docutils literal notranslate"><span class="pre">lgp</span></code> contains the following keys:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">lat</span></code>: the name of the netCDF variable containing the latitude of the mesh
+points. Optional, default: <code class="docutils literal notranslate"><span class="pre">lat</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lon</span></code>: the name of the netCDF variable containing the longitude of the mesh
+points. Optional, default: <code class="docutils literal notranslate"><span class="pre">lon</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">amplitude</span></code>: the pattern of the netCDF variable containing the amplitude of
+the tidal constituents. The pattern must contain the string <code class="docutils literal notranslate"><span class="pre">{constituent}</span></code>,
+which is replaced by the name of the tidal constituent. Example:
+<code class="docutils literal notranslate"><span class="pre">amp_{constituent}</span></code>. Optional, default: <code class="docutils literal notranslate"><span class="pre">{constituent}_amplitude</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">phase</span></code>: the pattern of the netCDF variable containing the phase of the
+tidal constituents. The pattern must contain the string <code class="docutils literal notranslate"><span class="pre">{constituent}</span></code>,
+which is replaced by the name of the tidal constituent. Example:
+<code class="docutils literal notranslate"><span class="pre">pha_{constituent}</span></code>. Optional, default: <code class="docutils literal notranslate"><span class="pre">{constituent}_phase</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">codes</span></code>: The name of the netCDF variable containing the LPG codes of the
+mesh points.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max_distance</span></code>: The maximum distance between a mesh point and a requested
+point outside the mesh. If the distance is greater than this value, the
+estimation is undefined, otherwise the estimation is extrapolated. Optional,
+default: <code class="docutils literal notranslate"><span class="pre">0.0</span></code> (extrapolation is not allowed).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">path</span></code>: the path to the netCDF file containing the tidal constituents.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">triangles</span></code>: the name of the netCDF variable containing the vertices of the
+triangles of the mesh. Optional, default: <code class="docutils literal notranslate"><span class="pre">triangle</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">type</span></code>: the type of LPG discretization. The possible values are <code class="docutils literal notranslate"><span class="pre">lgp1</span></code> and
+<code class="docutils literal notranslate"><span class="pre">lpg2</span></code>. Optional, default: <code class="docutils literal notranslate"><span class="pre">lgp1</span></code>.</p></li>
+</ul>
+</section>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h3>
+<p>The following example shows how to instantiate a tidal model using the
+configuration file <code class="docutils literal notranslate"><span class="pre">fes2014b.yaml</span></code>.</p>
+<p>The configuration file <code class="docutils literal notranslate"><span class="pre">fes2014b.yaml</span></code>:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">radial</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">cartesian</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">lat</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lat</span>
+<span class="w">        </span><span class="nt">lon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lon</span>
+<span class="w">        </span><span class="nt">amplitude</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">amp</span>
+<span class="w">        </span><span class="nt">phase</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pha</span>
+<span class="w">        </span><span class="nt">epsilon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1e-6</span>
+<span class="w">        </span><span class="nt">paths</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">M2</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${PATH}/M2.nc</span>
+<span class="w">            </span><span class="nt">S2</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${PATH}/S2.nc</span>
+<span class="w">            </span><span class="nt">K1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${PATH}/K1.nc</span>
+<span class="w">            </span><span class="nt">O1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${PATH}/O1.nc</span>
+<span class="w">            </span><span class="nt">P1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${PATH}/P1.nc</span>
+<span class="w">            </span><span class="nt">Q1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${PATH}/Q1.nc</span>
+<span class="nt">tide</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">lgp</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">lat</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lat</span>
+<span class="w">        </span><span class="nt">lon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lon</span>
+<span class="w">        </span><span class="nt">amplitude</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">amp_{constituent}</span>
+<span class="w">        </span><span class="nt">phase</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pha_{constituent}</span>
+<span class="w">        </span><span class="nt">codes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">codes</span>
+<span class="w">        </span><span class="nt">max_distance</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span>
+<span class="w">        </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${PATH}/fes2014b_elevations.nc</span>
+<span class="w">        </span><span class="nt">triangles</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">triangle</span>
+<span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lgp1</span>
+</pre></div>
+</div>
+<p>The Python code to instantiate the tidal model and evaluate the tide elevation:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyfes</span>
+
+<span class="n">cfg</span> <span class="o">=</span> <span class="n">pyfes</span><span class="o">.</span><span class="n">load_config</span><span class="p">(</span><span class="s1">&#39;fes2014b.yaml&#39;</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="n">tide</span><span class="p">,</span> <span class="n">lp</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">pyfes</span><span class="o">.</span><span class="n">evaluate_tide</span><span class="p">(</span><span class="n">cfg</span><span class="p">[</span><span class="s1">&#39;tide&#39;</span><span class="p">],</span> <span class="n">dates</span><span class="p">,</span> <span class="n">lons</span><span class="p">,</span> <span class="n">lats</span><span class="p">,</span> <span class="n">num_threads</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">load</span> <span class="o">=</span> <span class="n">pyfes</span><span class="o">.</span><span class="n">evaluate_radial</span><span class="p">(</span><span class="n">cfg</span><span class="p">[</span><span class="s1">&#39;radial&#39;</span><span class="p">],</span> <span class="n">dates</span><span class="p">,</span> <span class="n">lons</span><span class="p">,</span> <span class="n">lats</span><span class="p">,</span> <span class="n">num_threads</span><span class="o">=</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">geocentric_tide</span> <span class="o">=</span> <span class="n">tide</span> <span class="o">+</span> <span class="n">load</span> <span class="o">+</span> <span class="n">lp</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="harmonic-analysis">
+<h2>Harmonic analysis<a class="headerlink" href="#harmonic-analysis" title="Link to this heading">#</a></h2>
+<p>The static method <a class="reference internal" href="api.html#pyfes.wave_table.WaveTable.harmonic_analysis" title="pyfes.wave_table.WaveTable.harmonic_analysis"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyfes.wave_table.WaveTable.harmonic_analysis()</span></code></a> function
+can be used to perform a harmonic analysis of a time series.</p>
+<p>The source tree contains a time series <code class="docutils literal notranslate"><span class="pre">fes_tide_time_series.nc</span></code> containing
+the tide elevation for one year. This file is located in the
+<code class="docutils literal notranslate"><span class="pre">tests/python/dataset</span></code> directory.</p>
+<p>The first step is to read this time series using the NetCDF4 library, for
+example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">netCDF4</span>
+
+<span class="k">with</span> <span class="n">netCDF4</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="s2">&quot;tests/dataset/fes_tide_time_series.nc&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">dataset</span><span class="p">:</span>
+    <span class="n">time</span> <span class="o">=</span> <span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">][:])</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;datetime64[us]&quot;</span><span class="p">)</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;ocean&#39;</span><span class="p">][:]</span> <span class="o">*</span> <span class="mf">1e-2</span>      <span class="c1"># cm to m</span>
+</pre></div>
+</div>
+<p>Then, we will create an instance of a <a class="reference internal" href="api.html#pyfes.wave_table.WaveTable" title="pyfes.wave_table.WaveTable"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyfes.wave_table.WaveTable</span></code></a>
+object:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyfes</span>
+
+<span class="n">wave_table</span> <span class="o">=</span> <span class="n">pyfes</span><span class="o">.</span><span class="n">WaveTable</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>By default, all components known by this object are loaded into memory. The list
+of components known by this object can be retrieved using the
+<code class="xref py py-func docutils literal notranslate"><span class="pre">pyfes.wave_table.WaveTable.known_constituents()</span></code> method.</p>
+<p>If you want to restrict the analysis to only a few components, you must provide
+a list to the constructor in order to specify the waves to be analyzed.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">wave_table</span> <span class="o">=</span> <span class="n">pyfes</span><span class="o">.</span><span class="n">WaveTable</span><span class="p">([</span><span class="s1">&#39;M2&#39;</span><span class="p">,</span> <span class="s1">&#39;S2&#39;</span><span class="p">,</span> <span class="s1">&#39;K1&#39;</span><span class="p">,</span> <span class="s1">&#39;O1&#39;</span><span class="p">,</span> <span class="s1">&#39;P1&#39;</span><span class="p">,</span> <span class="s1">&#39;Q1&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>The different nodal corrections are then calculated from the time series to be
+analyzed:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">vu</span> <span class="o">=</span> <span class="n">wt</span><span class="o">.</span><span class="n">compute_nodal_modulations</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>These coefficients are used by harmonic analysis to determine the properties of
+the different tidal waves defined during the construction of the instance.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">w</span> <span class="o">=</span> <span class="n">wt</span><span class="o">.</span><span class="n">harmonic_analysis</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">vu</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This result can then be used to determine a tidal height for the analyzed time
+series:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tide</span> <span class="o">=</span> <span class="n">wt</span><span class="o">.</span><span class="n">tide_from_tide_series</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="setup.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Setup with the existing python</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="api.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">API</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-file">Configuration file</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cartesian-grid">Cartesian grid</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lgp-discretization">LGP discretization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#harmonic-analysis">Harmonic analysis</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By CNES
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, CNES.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

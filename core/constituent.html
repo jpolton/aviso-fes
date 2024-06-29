@@ -1,0 +1,521 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>pyfes.core.Constituent &#8212; FES 0.0.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=5db94ae7"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'core/constituent';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="pyfes.core.TideType" href="tide_type.html" />
+    <link rel="prev" title="Core API" href="../core.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">FES 0.0.0 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../setup.html">Setup with the existing python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyfes.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">API</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../core.html">Core API</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">pyfes.core.Constituent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tide_type.html">pyfes.core.TideType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quality.html">pyfes.core.Quality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="astronomic_angle.html">pyfes.core.AstronomicAngle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wave.html">pyfes.core.Wave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wave_table.html">pyfes.core.WaveTable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="abstract.html">pyfes.core.AbstractTidalModelComplex64</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="cartesian.html">pyfes.core.Axis</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="lgp1.html">pyfes.core.tidal_model.LGP1Complex64</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="lgp2.html">pyfes.core.tidal_model.LGP2Complex64</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="tide.html">pyfes.core.evaluate_tide</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/core/constituent.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>pyfes.core.Constituent</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyfes.core.Constituent"><code class="docutils literal notranslate"><span class="pre">Constituent</span></code></a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="pyfes-core-constituent">
+<h1>pyfes.core.Constituent<a class="headerlink" href="#pyfes-core-constituent" title="Link to this heading">#</a></h1>
+<dl class="py data">
+<dt class="sig sig-object py" id="pyfes.core.Constituent">
+<span class="sig-prename descclassname"><span class="pre">pyfes.core.</span></span><span class="sig-name descname"><span class="pre">Constituent</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;class</span> <span class="pre">'pyfes.core.Constituent'&gt;</span></em><a class="headerlink" href="#pyfes.core.Constituent" title="Link to this definition">#</a></dt>
+<dd><p>Members:</p>
+<p>kMm : <span class="math notranslate nohighlight">\(Mm\)</span></p>
+<p>kMf : <span class="math notranslate nohighlight">\(Mf\)</span></p>
+<p>kMtm : <span class="math notranslate nohighlight">\(Mtm\)</span></p>
+<p>kMsqm : <span class="math notranslate nohighlight">\(Msqm\)</span></p>
+<p>k2Q1 : <span class="math notranslate nohighlight">\(2Q_{1}\)</span></p>
+<p>kSigma1 : <span class="math notranslate nohighlight">\(\sigma_{1}\)</span></p>
+<p>kQ1 : <span class="math notranslate nohighlight">\(Q_{1}\)</span></p>
+<p>kRho1 : <span class="math notranslate nohighlight">\(\rho_{1}\)</span></p>
+<p>kO1 : <span class="math notranslate nohighlight">\(O_{1}\)</span></p>
+<p>kMP1 : <span class="math notranslate nohighlight">\(MP_{1}\)</span></p>
+<p>kM11 : <span class="math notranslate nohighlight">\(M_{11}\)</span></p>
+<p>kM12 : <span class="math notranslate nohighlight">\(M_{12}\)</span></p>
+<p>kM13 : <span class="math notranslate nohighlight">\(M_{13}\)</span></p>
+<p>kChi1 : <span class="math notranslate nohighlight">\(\chi_{1}\)</span></p>
+<p>kPi1 : <span class="math notranslate nohighlight">\(\pi_{1}\)</span></p>
+<p>kP1 : <span class="math notranslate nohighlight">\(P_{1}\)</span></p>
+<p>kS1 : <span class="math notranslate nohighlight">\(S_{1}\)</span></p>
+<p>kK1 : <span class="math notranslate nohighlight">\(K_{1}\)</span></p>
+<p>kPsi1 : <span class="math notranslate nohighlight">\(\psi_{1}\)</span></p>
+<p>kPhi1 : <span class="math notranslate nohighlight">\(\varphi_{1}\)</span></p>
+<p>kTheta1 : <span class="math notranslate nohighlight">\(\theta_{1}\)</span></p>
+<p>kJ1 : <span class="math notranslate nohighlight">\(J_{1}\)</span></p>
+<p>kOO1 : <span class="math notranslate nohighlight">\(OO_{1}\)</span></p>
+<p>kMNS2 : <span class="math notranslate nohighlight">\(MNS_{2}\)</span></p>
+<p>kEps2 : <span class="math notranslate nohighlight">\(\varepsilon_{2}\)</span></p>
+<p>k2N2 : <span class="math notranslate nohighlight">\(2N_{2}\)</span></p>
+<p>kMu2 : <span class="math notranslate nohighlight">\(\upsilon_{2}\)</span></p>
+<p>k2MS2 : <span class="math notranslate nohighlight">\(2MS_{2}\)</span></p>
+<p>kN2 : <span class="math notranslate nohighlight">\(N_{2}\)</span></p>
+<p>kNu2 : <span class="math notranslate nohighlight">\(\nu_{2}\)</span></p>
+<p>kM2 : <span class="math notranslate nohighlight">\(M_{2}\)</span></p>
+<p>kMKS2 : <span class="math notranslate nohighlight">\(MKS_{2}\)</span></p>
+<p>kLambda2 : <span class="math notranslate nohighlight">\(\lambda_{2}\)</span></p>
+<p>kL2 : <span class="math notranslate nohighlight">\(L_{2}\)</span></p>
+<p>k2MN2 : <span class="math notranslate nohighlight">\(2MN_{2}\)</span></p>
+<p>kT2 : <span class="math notranslate nohighlight">\(T_{2}\)</span></p>
+<p>kS2 : <span class="math notranslate nohighlight">\(S_{2}\)</span></p>
+<p>kR2 : <span class="math notranslate nohighlight">\(R_{2}\)</span></p>
+<p>kK2 : <span class="math notranslate nohighlight">\(K_{2}\)</span></p>
+<p>kMSN2 : <span class="math notranslate nohighlight">\(MSN_{2}\)</span></p>
+<p>kEta2 : <span class="math notranslate nohighlight">\(\eta_{2}\)</span></p>
+<p>k2SM2 : <span class="math notranslate nohighlight">\(2SM_{2}\)</span></p>
+<p>kMO3 : <span class="math notranslate nohighlight">\(MO_{3}\)</span></p>
+<p>k2MK3 : <span class="math notranslate nohighlight">\(2MK_{3}\)</span></p>
+<p>kM3 : <span class="math notranslate nohighlight">\(M_{3}\)</span></p>
+<p>kMK3 : <span class="math notranslate nohighlight">\(MK_{3}\)</span></p>
+<p>kN4 : <span class="math notranslate nohighlight">\(N_{4}\)</span></p>
+<p>kMN4 : <span class="math notranslate nohighlight">\(MN_{4}\)</span></p>
+<p>kM4 : <span class="math notranslate nohighlight">\(M_{4}\)</span></p>
+<p>kSN4 : <span class="math notranslate nohighlight">\(SN_{4}\)</span></p>
+<p>kMS4 : <span class="math notranslate nohighlight">\(MS_{4}\)</span></p>
+<p>kMK4 : <span class="math notranslate nohighlight">\(MK_{4}\)</span></p>
+<p>kS4 : <span class="math notranslate nohighlight">\(S_{4}\)</span></p>
+<p>kSK4 : <span class="math notranslate nohighlight">\(SK_{4}\)</span></p>
+<p>kR4 : <span class="math notranslate nohighlight">\(R_{4}\)</span></p>
+<p>k2MN6 : <span class="math notranslate nohighlight">\(2MN_{6}\)</span></p>
+<p>kM6 : <span class="math notranslate nohighlight">\(M_{6}\)</span></p>
+<p>kMSN6 : <span class="math notranslate nohighlight">\(MSN_{6}\)</span></p>
+<p>k2MS6 : <span class="math notranslate nohighlight">\(2MS_{6}\)</span></p>
+<p>k2MK6 : <span class="math notranslate nohighlight">\(2MK_{6}\)</span></p>
+<p>k2SM6 : <span class="math notranslate nohighlight">\(2SM_{6}\)</span></p>
+<p>kMSK6 : <span class="math notranslate nohighlight">\(MSK_{6}\)</span></p>
+<p>kS6 : <span class="math notranslate nohighlight">\(S_{6}\)</span></p>
+<p>kM8 : <span class="math notranslate nohighlight">\(M_{8}\)</span></p>
+<p>kMSf : <span class="math notranslate nohighlight">\(MSf\)</span></p>
+<p>kSsa : <span class="math notranslate nohighlight">\(Ssa\)</span></p>
+<p>kSa : <span class="math notranslate nohighlight">\(Sa\)</span></p>
+<p>kA5 : <span class="math notranslate nohighlight">\(A_{5}\)</span></p>
+<p>kSa1 : <span class="math notranslate nohighlight">\(Sa_{1}\)</span></p>
+<p>kSta : <span class="math notranslate nohighlight">\(Sta\)</span></p>
+<p>kMm2 : <span class="math notranslate nohighlight">\(Mm_{2}\)</span></p>
+<p>kMm1 : <span class="math notranslate nohighlight">\(Mm_{1}\)</span></p>
+<p>kMf1 : <span class="math notranslate nohighlight">\(Mf_{1}\)</span></p>
+<p>kMf2 : <span class="math notranslate nohighlight">\(Mf_{2}\)</span></p>
+<p>kM0 : <span class="math notranslate nohighlight">\(M_{0}\)</span></p>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../core.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Core API</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="tide_type.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">pyfes.core.TideType</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyfes.core.Constituent"><code class="docutils literal notranslate"><span class="pre">Constituent</span></code></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By CNES
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, CNES.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

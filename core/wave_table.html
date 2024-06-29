@@ -1,0 +1,642 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>pyfes.core.WaveTable &#8212; FES 0.0.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=5db94ae7"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'core/wave_table';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="pyfes.core.AbstractTidalModelComplex64" href="abstract.html" />
+    <link rel="prev" title="pyfes.core.Wave" href="wave.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">FES 0.0.0 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../setup.html">Setup with the existing python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyfes.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">API</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../core.html">Core API</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="constituent.html">pyfes.core.Constituent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tide_type.html">pyfes.core.TideType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quality.html">pyfes.core.Quality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="astronomic_angle.html">pyfes.core.AstronomicAngle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wave.html">pyfes.core.Wave</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">pyfes.core.WaveTable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="abstract.html">pyfes.core.AbstractTidalModelComplex64</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="cartesian.html">pyfes.core.Axis</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="lgp1.html">pyfes.core.tidal_model.LGP1Complex64</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="lgp2.html">pyfes.core.tidal_model.LGP2Complex64</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="tide.html">pyfes.core.evaluate_tide</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/core/wave_table.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>pyfes.core.WaveTable</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyfes.core.WaveTable"><code class="docutils literal notranslate"><span class="pre">WaveTable</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyfes.core.WaveTable.__init__"><code class="docutils literal notranslate"><span class="pre">WaveTable.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyfes.core.WaveTable.admittance"><code class="docutils literal notranslate"><span class="pre">WaveTable.admittance()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyfes.core.WaveTable.compute_nodal_corrections"><code class="docutils literal notranslate"><span class="pre">WaveTable.compute_nodal_corrections()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyfes.core.WaveTable.compute_nodal_modulations"><code class="docutils literal notranslate"><span class="pre">WaveTable.compute_nodal_modulations()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyfes.core.WaveTable.find"><code class="docutils literal notranslate"><span class="pre">WaveTable.find()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyfes.core.WaveTable.harmonic_analysis"><code class="docutils literal notranslate"><span class="pre">WaveTable.harmonic_analysis()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyfes.core.WaveTable.keys"><code class="docutils literal notranslate"><span class="pre">WaveTable.keys()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyfes.core.WaveTable.select_waves_for_analysis"><code class="docutils literal notranslate"><span class="pre">WaveTable.select_waves_for_analysis()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyfes.core.WaveTable.tide_from_mapping"><code class="docutils literal notranslate"><span class="pre">WaveTable.tide_from_mapping()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyfes.core.WaveTable.tide_from_tide_series"><code class="docutils literal notranslate"><span class="pre">WaveTable.tide_from_tide_series()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyfes.core.WaveTable.values"><code class="docutils literal notranslate"><span class="pre">WaveTable.values()</span></code></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="pyfes-core-wavetable">
+<h1>pyfes.core.WaveTable<a class="headerlink" href="#pyfes-core-wavetable" title="Link to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyfes.core.WaveTable">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyfes.core.</span></span><span class="sig-name descname"><span class="pre">WaveTable</span></span><a class="headerlink" href="#pyfes.core.WaveTable" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_object</span></code></p>
+<p>Properties of tide waves computed</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyfes.core.WaveTable.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyfes.core.WaveTable" title="pyfes.core.WaveTable"><span class="pre">pyfes.core.WaveTable</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">waves</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyfes.core.WaveTable.__init__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyfes.core.WaveTable.admittance">
+<span class="sig-name descname"><span class="pre">admittance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyfes.core.WaveTable" title="pyfes.core.WaveTable"><span class="pre">pyfes.core.WaveTable</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyfes.core.WaveTable.admittance" title="Link to this definition">#</a></dt>
+<dd><p>Compute waves by admittance from these 7 major ones : O1, Q1, K1, 2n2, N2, M2,
+K2.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyfes.core.WaveTable.compute_nodal_corrections">
+<span class="sig-name descname"><span class="pre">compute_nodal_corrections</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyfes.core.WaveTable" title="pyfes.core.WaveTable"><span class="pre">pyfes.core.WaveTable</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">angles</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="astronomic_angle.html#pyfes.core.AstronomicAngle" title="pyfes.core.AstronomicAngle"><span class="pre">pyfes.core.AstronomicAngle</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyfes.core.WaveTable.compute_nodal_corrections" title="Link to this definition">#</a></dt>
+<dd><p>Compute nodal corrections.
+:param angles: Astronomic angle, indicating the date on which the tide is to be</p>
+<blockquote>
+<div><p>calculated.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyfes.core.WaveTable.compute_nodal_modulations">
+<span class="sig-name descname"><span class="pre">compute_nodal_modulations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self:</span> <span class="pre">pyfes.core.WaveTable,</span> <span class="pre">dates:</span> <span class="pre">numpy.ndarray,</span> <span class="pre">leap_seconds:</span> <span class="pre">numpy.ndarray[numpy.uint16[m,</span> <span class="pre">1]],</span> <span class="pre">formulae:</span> <span class="pre">pyfes.core.Formulae</span> <span class="pre">=</span> <span class="pre">&lt;Formulae.kSchuremanOrder3:</span> <span class="pre">1&gt;</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">[</span></span><span class="pre">m</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">n</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">[</span></span><span class="pre">m</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">n</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pyfes.core.WaveTable.compute_nodal_modulations" title="Link to this definition">#</a></dt>
+<dd><p>Compute nodal modulations for amplitude and phase.
+:param dates: Desired UTC time. The array must be one-dimensional</p>
+<blockquote>
+<div><p>and of type <code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.datetime64</span></code>.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>leap_seconds</strong> – Leap seconds at the date of the tide calculation.</p></li>
+<li><p><strong>formulae</strong> – Astronomic formulae used to calculate the astronomic angles.
+Defaults to <code class="xref py py-attr docutils literal notranslate"><span class="pre">fes.angle.Formulae.kSchuremanOrder3</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the nodal correction for amplitude, v (greenwich argument) + u
+(nodal correction for phase)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyfes.core.WaveTable.find">
+<span class="sig-name descname"><span class="pre">find</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyfes.core.WaveTable" title="pyfes.core.WaveTable"><span class="pre">pyfes.core.WaveTable</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">ident</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="wave.html#pyfes.core.Wave" title="pyfes.core.Wave"><span class="pre">pyfes.core.Wave</span></a></span></span><a class="headerlink" href="#pyfes.core.WaveTable.find" title="Link to this definition">#</a></dt>
+<dd><p>Find a wave in the table by its name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> – Name of the wave. The search is not case sensitive, so “M2” and “m2”
+are equivalent.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The wave if found, None otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyfes.core.WaveTable.harmonic_analysis">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">harmonic_analysis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">h</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">[</span></span><span class="pre">m</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">[</span></span><span class="pre">m</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">n</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">flags.f_contiguous</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vu</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">[</span></span><span class="pre">m</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">n</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">flags.f_contiguous</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.complex128</span><span class="p"><span class="pre">[</span></span><span class="pre">m</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pyfes.core.WaveTable.harmonic_analysis" title="Link to this definition">#</a></dt>
+<dd><p>Harmonic Analysis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>h</strong> – Sea level.</p></li>
+<li><p><strong>f</strong> – Nodal correction coefficient applied to the amplitude of the
+constituents analyzed.</p></li>
+<li><p><strong>vu</strong> – Astronomical argument at time <span class="math notranslate nohighlight">\(t\)</span> + the nodal correction
+coefficient applied to the phase of the constituents analyzed.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The complex number representing the different reconstructed waves.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyfes.core.WaveTable.keys">
+<span class="sig-name descname"><span class="pre">keys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyfes.core.WaveTable" title="pyfes.core.WaveTable"><span class="pre">pyfes.core.WaveTable</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pyfes.core.WaveTable.keys" title="Link to this definition">#</a></dt>
+<dd><p>Return the list of tidal constituents handled by this instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of tidal constituents.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyfes.core.WaveTable.select_waves_for_analysis">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">select_waves_for_analysis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">duration</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2.0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pyfes.core.WaveTable.select_waves_for_analysis" title="Link to this definition">#</a></dt>
+<dd><p>Return the list of tidal waves such that their period is more than twice the
+duration of the time series analyzed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>duration</strong> – Duration of the time series analyzed in seconds</p></li>
+<li><p><strong>f</strong> – Number of times the period of the wave is greater than the duration of the
+time series analyzed</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of selected tidal waves.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyfes.core.WaveTable.tide_from_mapping">
+<span class="sig-name descname"><span class="pre">tide_from_mapping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self:</span> <span class="pre">pyfes.core.WaveTable,</span> <span class="pre">date:</span> <span class="pre">object,</span> <span class="pre">leap_seconds:</span> <span class="pre">int,</span> <span class="pre">mapping:</span> <span class="pre">numpy.ndarray[numpy.complex128[m,</span> <span class="pre">n],</span> <span class="pre">flags.f_contiguous],</span> <span class="pre">formulae:</span> <span class="pre">pyfes.core.Formulae</span> <span class="pre">=</span> <span class="pre">&lt;Formulae.kSchuremanOrder3:</span> <span class="pre">1&gt;,</span> <span class="pre">num_threads:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">0</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">[</span></span><span class="pre">m</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">n</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pyfes.core.WaveTable.tide_from_mapping" title="Link to this definition">#</a></dt>
+<dd><p>Calculates the tide for a given date from a grid describing the wave properties
+over an area of interest.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>date</strong> – UTC date.</p></li>
+<li><p><strong>leap_seconds</strong> – Leap seconds at the date of the tide calculation.</p></li>
+<li><p><strong>mapping</strong> – Mapping of the wave properties over an area of interest.</p></li>
+<li><p><strong>formulae</strong> – Astronomic formulae used to calculate the astronomic angles.
+Defaults to <code class="xref py py-attr docutils literal notranslate"><span class="pre">fes.angle.Formulae.kSchuremanOrder3</span></code>.</p></li>
+<li><p><strong>num_threads</strong> – Number of threads to use. If 0, the number of threads is
+automatically determined.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The tide calculated for the mapping provided at the given date.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyfes.core.WaveTable.tide_from_tide_series">
+<span class="sig-name descname"><span class="pre">tide_from_tide_series</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">self:</span> <span class="pre">pyfes.core.WaveTable,</span> <span class="pre">dates:</span> <span class="pre">numpy.ndarray,</span> <span class="pre">leap_seconds:</span> <span class="pre">numpy.ndarray[numpy.uint16[m,</span> <span class="pre">1]],</span> <span class="pre">wave:</span> <span class="pre">numpy.ndarray[numpy.complex128[m,</span> <span class="pre">1]],</span> <span class="pre">formulae:</span> <span class="pre">pyfes.core.Formulae</span> <span class="pre">=</span> <span class="pre">&lt;Formulae.kSchuremanOrder3:</span> <span class="pre">1&gt;</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">[</span></span><span class="pre">m</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">1</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pyfes.core.WaveTable.tide_from_tide_series" title="Link to this definition">#</a></dt>
+<dd><p>Calculates the tide of a given time series.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dates</strong> – UTC dates. The array must be one-dimensional and of type
+<code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.datetime64</span></code>.</p></li>
+<li><p><strong>leap_seconds</strong> – Leap seconds at the date of the tide calculation.</p></li>
+<li><p><strong>wave</strong> – Tidal wave properties computed by
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">fes.core.WaveTable.harmonic_analysis()</span></code>.</p></li>
+<li><p><strong>formulae</strong> – Astronomic formulae used to calculate the astronomic angles.
+Defaults to <code class="xref py py-attr docutils literal notranslate"><span class="pre">fes.angle.Formulae.kSchuremanOrder3</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The tide calculated for the time series provided.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyfes.core.WaveTable.values">
+<span class="sig-name descname"><span class="pre">values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyfes.core.WaveTable" title="pyfes.core.WaveTable"><span class="pre">pyfes.core.WaveTable</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="wave.html#pyfes.core.Wave" title="pyfes.core.Wave"><span class="pre">pyfes.core.Wave</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#pyfes.core.WaveTable.values" title="Link to this definition">#</a></dt>
+<dd><p>Return the list of tidal waves handled by this instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of tidal waves.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="wave.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">pyfes.core.Wave</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="abstract.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">pyfes.core.AbstractTidalModelComplex64</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyfes.core.WaveTable"><code class="docutils literal notranslate"><span class="pre">WaveTable</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyfes.core.WaveTable.__init__"><code class="docutils literal notranslate"><span class="pre">WaveTable.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyfes.core.WaveTable.admittance"><code class="docutils literal notranslate"><span class="pre">WaveTable.admittance()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyfes.core.WaveTable.compute_nodal_corrections"><code class="docutils literal notranslate"><span class="pre">WaveTable.compute_nodal_corrections()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyfes.core.WaveTable.compute_nodal_modulations"><code class="docutils literal notranslate"><span class="pre">WaveTable.compute_nodal_modulations()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyfes.core.WaveTable.find"><code class="docutils literal notranslate"><span class="pre">WaveTable.find()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyfes.core.WaveTable.harmonic_analysis"><code class="docutils literal notranslate"><span class="pre">WaveTable.harmonic_analysis()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyfes.core.WaveTable.keys"><code class="docutils literal notranslate"><span class="pre">WaveTable.keys()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyfes.core.WaveTable.select_waves_for_analysis"><code class="docutils literal notranslate"><span class="pre">WaveTable.select_waves_for_analysis()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyfes.core.WaveTable.tide_from_mapping"><code class="docutils literal notranslate"><span class="pre">WaveTable.tide_from_mapping()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyfes.core.WaveTable.tide_from_tide_series"><code class="docutils literal notranslate"><span class="pre">WaveTable.tide_from_tide_series()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyfes.core.WaveTable.values"><code class="docutils literal notranslate"><span class="pre">WaveTable.values()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By CNES
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, CNES.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

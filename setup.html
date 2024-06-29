@@ -1,0 +1,548 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Setup with the existing python &#8212; FES 0.0.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=5db94ae7"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'setup';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Introduction" href="pyfes.html" />
+    <link rel="prev" title="PyFES documentation" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">FES 0.0.0 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Setup with the existing python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyfes.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="core.html">Core API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="core/constituent.html">pyfes.core.Constituent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core/tide_type.html">pyfes.core.TideType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core/quality.html">pyfes.core.Quality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core/astronomic_angle.html">pyfes.core.AstronomicAngle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core/wave.html">pyfes.core.Wave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core/wave_table.html">pyfes.core.WaveTable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core/abstract.html">pyfes.core.AbstractTidalModelComplex64</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="core/cartesian.html">pyfes.core.Axis</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="core/lgp1.html">pyfes.core.tidal_model.LGP1Complex64</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="core/lgp2.html">pyfes.core.tidal_model.LGP2Complex64</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="core/tide.html">pyfes.core.evaluate_tide</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/setup.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Setup with the existing python</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build">Build</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test">Test</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Requirements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-tests">Running tests</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automatic-documentation">Automatic Documentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install">Install</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="setup-with-the-existing-python">
+<h1>Setup with the existing python<a class="headerlink" href="#setup-with-the-existing-python" title="Link to this heading">#</a></h1>
+<p>We will present how to compile the code, install and run the various scripts
+with <a class="reference external" href="https://setuptools.readthedocs.io/en/latest/">setuptools</a>.</p>
+<section id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Link to this heading">#</a></h2>
+<p>Because the programs are written in Python, and some parts of the library in
+C++, you must have Python 3, at least Python version 3.8, a C++ compiler and
+<a class="reference external" href="https://cmake.org/">cmake</a> installed on your system to build the library.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The C++ compiler must support the ISO C++ 2014 standard</p>
+</div>
+<p>The compiling C++ requires the following development library:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://www.boost.org/">Boost</a></p></li>
+<li><p><a class="reference external" href="http://eigen.tuxfamily.org/">Eigen3</a></p></li>
+</ul>
+</div></blockquote>
+<p>Eigen3 can utilize optimized libraries such as <a class="reference external" href="https://software.intel.com/en-us/mkl">Intel Math Kernel Library (MKL)</a>, <a class="reference external" href="https://www.openblas.net/">OpenBlas</a>, or <a class="reference external" href="https://developer.apple.com/documentation/accelerate">Accelerate</a> on MacOSX to enhance
+computation speed. These libraries replace the default BLAS implementation
+provided by Eigen3.</p>
+<p>You can install these packages on Ubuntu by typing the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-add-repository<span class="w"> </span>multiverse<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="c1"># MKL is in the multiverse repo.</span>
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>g++<span class="w"> </span>cmake<span class="w"> </span>libeigen3-dev<span class="w"> </span>libmkl-dev<span class="w"> </span>libboost-dev
+</pre></div>
+</div>
+<p>You need, also, to install Python libraries before configuring and installing
+this software:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://www.numpy.org/">numpy</a></p></li>
+<li><p><a class="reference external" href="https://unidata.github.io/netcdf4-python/">netCDF4</a></p></li>
+</ul>
+</div></blockquote>
+<p>You can install these packages on Ubuntu by typing the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>python3-numpy<span class="w"> </span>python3-netcdf4
+</pre></div>
+</div>
+</section>
+<section id="build">
+<h2>Build<a class="headerlink" href="#build" title="Link to this heading">#</a></h2>
+<p>Once you have satisfied the requirements detailed above, to build the library,
+type the command <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">setup.py</span> <span class="pre">build</span></code> at the root of the project.</p>
+<p>You can specify, among other things, the following options to <cite>build-ext</cite>
+command to customize the build:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--boost-root</span></code> to specify the Boost include directory,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--cxx-compiler</span></code> to select the C++ compiler to use,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--debug</span></code> to compile the C++ library in Debug mode,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--eigen-root</span></code> to specify the Eigen3 include directory,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--generator</span></code> to specify the generator used by CMake,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--mkl-root</span></code> to specify the MKL root.</p></li>
+</ul>
+</div></blockquote>
+<p>Run the <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">build-ext</span> <span class="pre">--help</span></code> command to view all the options
+available for building the library.</p>
+</section>
+<section id="test">
+<h2>Test<a class="headerlink" href="#test" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h3>Requirements<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Running tests require the following Python libraries:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://docs.pytest.org/en/latest/">pytest</a></p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="running-tests">
+<h3>Running tests<a class="headerlink" href="#running-tests" title="Link to this heading">#</a></h3>
+<p>The distribution contains a set of test cases that can be processed with the
+standard Python test framework. To run the full test suite,
+use the following at the root of the project:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest<span class="w"> </span>-v
+</pre></div>
+</div>
+</section>
+</section>
+<section id="automatic-documentation">
+<h2>Automatic Documentation<a class="headerlink" href="#automatic-documentation" title="Link to this heading">#</a></h2>
+<p>The source code of this documentation is managed by
+<a class="reference external" href="http://www.sphinx-doc.org/en/master/">sphinx</a>. It is possible to
+generate it in order to produce a local mini WEB site to read and navigate it.
+To do this, type the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">build_sphinx</span>
+</pre></div>
+</div>
+</section>
+<section id="install">
+<h2>Install<a class="headerlink" href="#install" title="Link to this heading">#</a></h2>
+<p>To install just type the command <cite>pip install .</cite> at the root of the project.</p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">PyFES documentation</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="pyfes.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Introduction</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build">Build</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test">Test</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Requirements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-tests">Running tests</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automatic-documentation">Automatic Documentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install">Install</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By CNES
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, CNES.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
